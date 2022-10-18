@@ -1,11 +1,10 @@
-@import "constants/style";
+@import "src/constants/style";
 
 .confirmation-dialog__wrapper {
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.75);
 }
-
 .confirmation-dialog {
   position: relative;
   max-width: 420px;
@@ -39,6 +38,9 @@
 [theme="dark"] {
   .confirmation-dialog {
     color: $color-white;
+    background-color: $color-dark-one;
+  }
+  .confirmation-dialog__close-button {
     background-color: $color-dark-one;
   }
 }
