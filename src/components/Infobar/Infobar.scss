@@ -24,3 +24,27 @@
   background-color: $color-white;
   color: $menu-icon-background-color--dark;
 }
+
+.info-bar__highlighted-participant {
+  height: 42px;
+  width: auto;
+  background-color: $menu-icon-background-color--dark;
+  color: $color-white;
+  border-radius: 999px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 $margin--small;
+  margin: 0;
+
+  > div,
+  > div > svg {
+    height: 36px;
+    width: 36px;
+  }
+
+  > figcaption {
+    color: $color-white;
+    font-weight: bold;
+  }
+}
