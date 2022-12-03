@@ -226,3 +226,15 @@ $note__author-image-size: 26px;
 .note__disabled-click {
   pointer-events: none;
 }
+
+.note__author-button {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.note__not-hightlighted {
+  opacity: 25% !important;
+}

@@ -26,6 +26,8 @@ export const BoardAction = {
   PassphraseChallengeRequired: "scrumlr.io/passphraseChallengeRequired" as const,
   SetTimer: "scrumlr.io/setTimer" as const,
   CancelTimer: "scrumlr.io/cancelTimer" as const,
+  SetHighlightedParticipant: "scrumlr.io/setHighlightedParticipant" as const,
+  UnsetHighlightedParticipant: "scrmlr.io/unsetHighlightedParticipant" as const,
 };
 
 /** Factory or creator class of internal Redux board object specific actions. */
@@ -131,6 +133,14 @@ export const BoardActionFactory = {
   cancelTimer: () => ({
     type: BoardAction.CancelTimer,
   }),
+
+  setHighlightedParticipant: (participant: string) => ({
+    type: BoardAction.SetHighlightedParticipant,
+    participant,
+  }),
+  unsetHighlightedParticipant: () => ({
+    type: BoardAction.UnsetHighlightedParticipant,
+  }),
 };
 
 export type BoardReduxAction =
@@ -146,4 +156,6 @@ export type BoardReduxAction =
   | ReturnType<typeof BoardActionFactory.pendingBoardAccessConfirmation>
   | ReturnType<typeof BoardActionFactory.setTimer>
   | ReturnType<typeof BoardActionFactory.cancelTimer>
-  | ReturnType<typeof BoardActionFactory.requirePassphraseChallenge>;
+  | ReturnType<typeof BoardActionFactory.requirePassphraseChallenge>
+  | ReturnType<typeof BoardActionFactory.setHighlightedParticipant>
+  | ReturnType<typeof BoardActionFactory.unsetHighlightedParticipant>;

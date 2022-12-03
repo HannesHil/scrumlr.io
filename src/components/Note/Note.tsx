@@ -40,6 +40,7 @@ export const Note = (props: NoteProps) => {
 
   const showAuthors = useAppSelector((state) => !!state.board.data?.showAuthors);
   const moderating = useAppSelector((state) => state.view.moderating);
+  const highlightedParticipant = useAppSelector((state) => state.board.data?.highlightedParticipant);
 
   /* eslint-disable */
   useEffect(() => {
@@ -104,7 +105,13 @@ export const Note = (props: NoteProps) => {
   return (
     <div className={classNames("note__root")}>
       <button
-        className={classNames("note", {"note--isDragging": isDragging}, {"note--isOver": isOver}, `note--${stackSetting}`)}
+        className={classNames(
+          "note",
+          {"note--isDragging": isDragging},
+          {"note--isOver": isOver},
+          {"note__not-hightlighted": !!highlightedParticipant && highlightedParticipant !== author.user?.id},
+          `note--${stackSetting}`
+        )}
         onClick={handleClick}
         onKeyPress={handleKeyPress}
         ref={noteRef}
@@ -112,10 +119,22 @@ export const Note = (props: NoteProps) => {
         <p className="note__text">{note!.text}</p>
         <div className="note__footer">
           {(showAuthors || props.viewer.user.id === author.user!.id) && (
-            <figure className={classNames("note__author", {"note__author--self": author.isSelf})} aria-roledescription="author">
-              <UserAvatar id={note!.author} avatar={author.user!.avatar} name={author.displayName} className="note__user-avatar" avatarClassName="note__user-avatar" />
-              <figcaption className="note__author-name">{author.displayName}</figcaption>
-            </figure>
+            <button
+              className="note__author-button"
+              onClick={(e) => {
+                e.stopPropagation();
+                if (highlightedParticipant === author.user?.id) {
+                  dispatch(Actions.unsetHighlightedParticipant());
+                } else {
+                  dispatch(Actions.setHighlightedParticipant(author.user!.id));
+                }
+              }}
+            >
+              <figure className={classNames("note__author", {"note__author--self": author.isSelf})} aria-roledescription="author">
+                <UserAvatar id={note!.author} avatar={author.user!.avatar} name={author.displayName} className="note__user-avatar" avatarClassName="note__user-avatar" />
+                <figcaption className="note__author-name">{author.displayName}</figcaption>
+              </figure>
+            </button>
           )}
           <Votes noteId={props.noteId!} aggregateVotes />
         </div>

@@ -16,6 +16,8 @@ export interface Board {
 
   sharedNote?: string;
   showVoting?: string;
+
+  highlightedParticipant?: string;
 }
 
 export type EditBoardRequest = Partial<Omit<Board, "id">> & {passphrase?: string};

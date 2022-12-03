@@ -80,6 +80,25 @@ export const boardReducer = (state: BoardState = {status: "unknown"}, action: Re
       return state;
     }
 
+    case Action.SetHighlightedParticipant: {
+      return {
+        status: state.status,
+        data: {
+          ...state.data!,
+          highlightedParticipant: action.participant,
+        },
+      };
+    }
+    case Action.UnsetHighlightedParticipant: {
+      return {
+        status: state.status,
+        data: {
+          ...state.data!,
+          highlightedParticipant: undefined,
+        },
+      };
+    }
+
     default: {
       return state;
     }
