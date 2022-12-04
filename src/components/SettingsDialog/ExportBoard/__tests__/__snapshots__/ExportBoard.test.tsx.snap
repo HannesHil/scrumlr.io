@@ -1,4 +1,517 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
+
+exports[`Export Boad Tests > render ExportBoard correctly 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="settings-dialog__container"
+        data-testid="export"
+      >
+        <div
+          class="settings-dialog__header"
+        >
+          <h2
+            class="settings-dialog__header-text accent-color__backlog-blue"
+          >
+             
+            Export board
+          </h2>
+        </div>
+        <div
+          class="settings-dialog__group accent-color__backlog-blue"
+        >
+          <button
+            class="settings-option-button export-board__button-reverse-order"
+            data-testid="export-json"
+            type="button"
+          >
+            <span
+              class="settings-option-button__label"
+            >
+              Export as JSON
+            </span>
+            <svg
+              class="settings-option-button__icon"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+              >
+                <g
+                  opacity="0.5"
+                >
+                  <path
+                    d="m11.4 1.7562c0.41471 0.03757 0.71177 0.16067 0.92428 0.392l4.708 5.1249c0.21189 0.23066 0.32947 0.53245 0.32947 0.84566v10.887c0 0.34518-0.13991 0.65768-0.36612 0.88388-0.2262 0.22621-0.5387 0.36612-0.88388 0.36612h-12c-0.34518 0-0.65768-0.13991-0.88388-0.36612-0.22621-0.2262-0.36612-0.5387-0.36612-0.88388v-16c0-0.34518 0.13991-0.65768 0.36612-0.88388 0.2262-0.22621 0.5387-0.36612 0.88388-0.36612h7.2882z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="m11.407 2.5062 0.13745 0.00683 0.04334 0.01284c0.0521 0.02113 0.12627 0.06646 0.18439 0.12972l0.94682 1.0306v3.57h3.28l0.48121 0.52429 0.05635 0.07415c0.04898 0.07875 0.07544 0.17015 0.07544 0.26411v0.63745h-4.6429c-0.37969 0-0.69349-0.28215-0.74315-0.64823l-0.00685-0.10177-1.4e-4 -5.5h0.188z"
+                    fill="currentColor"
+                  />
+                </g>
+              </g>
+              <text
+                fill="currentColor"
+                font-size="10"
+                font-weight="900"
+                stroke="currentColor"
+                stroke-width="0"
+                transform="matrix(.5204 0 0 .61244 5.0978 15.598)"
+                x="-0.74085"
+                xml:space="preserve"
+                y="4.34236"
+              >
+                JSON
+              </text>
+            </svg>
+          </button>
+          <hr
+            class="settings-dialog__separator"
+          />
+          <button
+            class="settings-option-button export-board__button-reverse-order"
+            data-testid="export-csv"
+            type="button"
+          >
+            <span
+              class="settings-option-button__label"
+            >
+              Export as CSV
+            </span>
+            <svg
+              class="settings-option-button__icon"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+              >
+                <g
+                  opacity="0.5"
+                >
+                  <path
+                    d="m11.4 1.7562c0.41471 0.03757 0.71177 0.16067 0.92428 0.392l4.708 5.1249c0.21189 0.23066 0.32947 0.53245 0.32947 0.84566v10.887c0 0.34518-0.13991 0.65768-0.36612 0.88388-0.2262 0.22621-0.5387 0.36612-0.88388 0.36612h-12c-0.34518 0-0.65768-0.13991-0.88388-0.36612-0.22621-0.2262-0.36612-0.5387-0.36612-0.88388v-16c0-0.34518 0.13991-0.65768 0.36612-0.88388 0.2262-0.22621 0.5387-0.36612 0.88388-0.36612h7.2882z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="m11.407 2.5062 0.13745 0.00683 0.04334 0.01284c0.0521 0.02113 0.12627 0.06646 0.18439 0.12972l0.94682 1.0306v3.57h3.28l0.48121 0.52429 0.05635 0.07415c0.04898 0.07875 0.07544 0.17015 0.07544 0.26411v0.63745h-4.6429c-0.37969 0-0.69349-0.28215-0.74315-0.64823l-0.00685-0.10177-1.4e-4 -5.5h0.188z"
+                    fill="currentColor"
+                  />
+                </g>
+              </g>
+              <text
+                fill="currentColor"
+                font-family="'Cabin'"
+                font-size="10"
+                font-weight="900"
+                stroke="currentColor"
+                stroke-width="0"
+                transform="matrix(.69819 0 0 .61244 4.5184 15.598)"
+                x="3.47783"
+                xml:space="preserve"
+                y="4.34236"
+              >
+                CSV
+              </text>
+            </svg>
+          </button>
+          <hr
+            class="settings-dialog__separator"
+          />
+          <button
+            class="settings-option-button export-board__button-reverse-order export-board__button-print-view"
+            type="button"
+          >
+            <span
+              class="settings-option-button__label"
+            >
+              Open print view
+            </span>
+            <svg
+              class="settings-option-button__icon"
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="ci-primary"
+                d="M420,128.1V16H92V128.1A80.1,80.1,0,0,0,16,208V400H84V368H48V208a48.054,48.054,0,0,1,48-48H416a48.054,48.054,0,0,1,48,48V368H420v32h76V208A80.1,80.1,0,0,0,420,128.1Zm-32-.1H124V48H388Z"
+                fill="var(--ci-primary-color, currentColor)"
+                opacity="0.5"
+              />
+              <rect
+                class="ci-primary"
+                fill="var(--ci-primary-color, currentColor)"
+                height="32"
+                width="32"
+                x="396"
+                y="200"
+              />
+              <path
+                class="ci-primary"
+                d="M116,264H76v32h40V496H388V296h40V264H116ZM356,464H148V296H356Z"
+                fill="var(--ci-primary-color, currentColor)"
+              />
+            </svg>
+          </button>
+          <hr
+            class="settings-dialog__separator"
+          />
+          <button
+            class="settings-option-button export-board__button-reverse-order"
+            data-testid="export-markdown"
+            type="button"
+          >
+            <span
+              class="settings-option-button__label"
+            >
+              Copy Markdown to Clipboard
+            </span>
+            <svg
+              class="settings-option-button__icon"
+              viewBox="0 0 34 34"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+              >
+                <g
+                  stroke="currentColor"
+                >
+                  <path
+                    d="m18.038 2.6585c0.42627 0.2546 0.78269 0.61101 1.0373 1.0373l1.1481 1.9238 1.7542 0.77419c0.13511 0.059652 0.26034 0.13244 0.37485 0.2162l1.6473 1.0208e-4c1.6569 0 3 1.3431 3 3v18.39c0 1.6569-1.3431 3-3 3h-15c-1.6569 0-3-1.3431-3-3v-18.39c0-1.6569 1.3431-3 3-3l1.6847-8.7773e-4c0.093173-0.068146 0.19302-0.12877 0.29887-0.18078l1.8521-0.91083 1.0888-1.8218c0.84958-1.4225 2.6914-1.8869 4.1139-1.0373z"
+                    id="a"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="m18.031 2.5606c0.38358 0.24048 0.70776 0.56466 0.94824 0.94824l1.2612 2.0121 1.5104 0.63549c1.0182 0.42824 1.4964 1.6008 1.0682 2.619-0.31209 0.74201-1.0386 1.2246-1.8436 1.2246h-9.068c-1.1046 0-2-0.89543-2-2 0-0.77617 0.44907-1.4823 1.152-1.8113l1.636-0.76672 1.2003-1.9131c0.88009-1.4038 2.7315-1.8283 4.1353-0.94824z"
+                    stroke-width="2"
+                  />
+                  <circle
+                    cx="16.5"
+                    cy="6"
+                    fill="#D8D8D8"
+                    r="1"
+                  />
+                  <line
+                    id="Line"
+                    stroke-linecap="round"
+                    stroke-width="2"
+                    x1="11.5"
+                    x2="18"
+                    y1="14.5"
+                    y2="14.5"
+                  />
+                  <line
+                    id="b"
+                    stroke-linecap="round"
+                    stroke-width="2"
+                    x1="11.5"
+                    x2="20"
+                    y1="26"
+                    y2="26"
+                  />
+                  <line
+                    stroke-linecap="round"
+                    stroke-width="2"
+                    x1="11.5"
+                    x2="22"
+                    y1="20"
+                    y2="20"
+                  />
+                </g>
+              </g>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="settings-dialog__container"
+      data-testid="export"
+    >
+      <div
+        class="settings-dialog__header"
+      >
+        <h2
+          class="settings-dialog__header-text accent-color__backlog-blue"
+        >
+           
+          Export board
+        </h2>
+      </div>
+      <div
+        class="settings-dialog__group accent-color__backlog-blue"
+      >
+        <button
+          class="settings-option-button export-board__button-reverse-order"
+          data-testid="export-json"
+          type="button"
+        >
+          <span
+            class="settings-option-button__label"
+          >
+            Export as JSON
+          </span>
+          <svg
+            class="settings-option-button__icon"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              fill="none"
+            >
+              <g
+                opacity="0.5"
+              >
+                <path
+                  d="m11.4 1.7562c0.41471 0.03757 0.71177 0.16067 0.92428 0.392l4.708 5.1249c0.21189 0.23066 0.32947 0.53245 0.32947 0.84566v10.887c0 0.34518-0.13991 0.65768-0.36612 0.88388-0.2262 0.22621-0.5387 0.36612-0.88388 0.36612h-12c-0.34518 0-0.65768-0.13991-0.88388-0.36612-0.22621-0.2262-0.36612-0.5387-0.36612-0.88388v-16c0-0.34518 0.13991-0.65768 0.36612-0.88388 0.2262-0.22621 0.5387-0.36612 0.88388-0.36612h7.2882z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="m11.407 2.5062 0.13745 0.00683 0.04334 0.01284c0.0521 0.02113 0.12627 0.06646 0.18439 0.12972l0.94682 1.0306v3.57h3.28l0.48121 0.52429 0.05635 0.07415c0.04898 0.07875 0.07544 0.17015 0.07544 0.26411v0.63745h-4.6429c-0.37969 0-0.69349-0.28215-0.74315-0.64823l-0.00685-0.10177-1.4e-4 -5.5h0.188z"
+                  fill="currentColor"
+                />
+              </g>
+            </g>
+            <text
+              fill="currentColor"
+              font-size="10"
+              font-weight="900"
+              stroke="currentColor"
+              stroke-width="0"
+              transform="matrix(.5204 0 0 .61244 5.0978 15.598)"
+              x="-0.74085"
+              xml:space="preserve"
+              y="4.34236"
+            >
+              JSON
+            </text>
+          </svg>
+        </button>
+        <hr
+          class="settings-dialog__separator"
+        />
+        <button
+          class="settings-option-button export-board__button-reverse-order"
+          data-testid="export-csv"
+          type="button"
+        >
+          <span
+            class="settings-option-button__label"
+          >
+            Export as CSV
+          </span>
+          <svg
+            class="settings-option-button__icon"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              fill="none"
+            >
+              <g
+                opacity="0.5"
+              >
+                <path
+                  d="m11.4 1.7562c0.41471 0.03757 0.71177 0.16067 0.92428 0.392l4.708 5.1249c0.21189 0.23066 0.32947 0.53245 0.32947 0.84566v10.887c0 0.34518-0.13991 0.65768-0.36612 0.88388-0.2262 0.22621-0.5387 0.36612-0.88388 0.36612h-12c-0.34518 0-0.65768-0.13991-0.88388-0.36612-0.22621-0.2262-0.36612-0.5387-0.36612-0.88388v-16c0-0.34518 0.13991-0.65768 0.36612-0.88388 0.2262-0.22621 0.5387-0.36612 0.88388-0.36612h7.2882z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="m11.407 2.5062 0.13745 0.00683 0.04334 0.01284c0.0521 0.02113 0.12627 0.06646 0.18439 0.12972l0.94682 1.0306v3.57h3.28l0.48121 0.52429 0.05635 0.07415c0.04898 0.07875 0.07544 0.17015 0.07544 0.26411v0.63745h-4.6429c-0.37969 0-0.69349-0.28215-0.74315-0.64823l-0.00685-0.10177-1.4e-4 -5.5h0.188z"
+                  fill="currentColor"
+                />
+              </g>
+            </g>
+            <text
+              fill="currentColor"
+              font-family="'Cabin'"
+              font-size="10"
+              font-weight="900"
+              stroke="currentColor"
+              stroke-width="0"
+              transform="matrix(.69819 0 0 .61244 4.5184 15.598)"
+              x="3.47783"
+              xml:space="preserve"
+              y="4.34236"
+            >
+              CSV
+            </text>
+          </svg>
+        </button>
+        <hr
+          class="settings-dialog__separator"
+        />
+        <button
+          class="settings-option-button export-board__button-reverse-order export-board__button-print-view"
+          type="button"
+        >
+          <span
+            class="settings-option-button__label"
+          >
+            Open print view
+          </span>
+          <svg
+            class="settings-option-button__icon"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="ci-primary"
+              d="M420,128.1V16H92V128.1A80.1,80.1,0,0,0,16,208V400H84V368H48V208a48.054,48.054,0,0,1,48-48H416a48.054,48.054,0,0,1,48,48V368H420v32h76V208A80.1,80.1,0,0,0,420,128.1Zm-32-.1H124V48H388Z"
+              fill="var(--ci-primary-color, currentColor)"
+              opacity="0.5"
+            />
+            <rect
+              class="ci-primary"
+              fill="var(--ci-primary-color, currentColor)"
+              height="32"
+              width="32"
+              x="396"
+              y="200"
+            />
+            <path
+              class="ci-primary"
+              d="M116,264H76v32h40V496H388V296h40V264H116ZM356,464H148V296H356Z"
+              fill="var(--ci-primary-color, currentColor)"
+            />
+          </svg>
+        </button>
+        <hr
+          class="settings-dialog__separator"
+        />
+        <button
+          class="settings-option-button export-board__button-reverse-order"
+          data-testid="export-markdown"
+          type="button"
+        >
+          <span
+            class="settings-option-button__label"
+          >
+            Copy Markdown to Clipboard
+          </span>
+          <svg
+            class="settings-option-button__icon"
+            viewBox="0 0 34 34"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              fill="none"
+            >
+              <g
+                stroke="currentColor"
+              >
+                <path
+                  d="m18.038 2.6585c0.42627 0.2546 0.78269 0.61101 1.0373 1.0373l1.1481 1.9238 1.7542 0.77419c0.13511 0.059652 0.26034 0.13244 0.37485 0.2162l1.6473 1.0208e-4c1.6569 0 3 1.3431 3 3v18.39c0 1.6569-1.3431 3-3 3h-15c-1.6569 0-3-1.3431-3-3v-18.39c0-1.6569 1.3431-3 3-3l1.6847-8.7773e-4c0.093173-0.068146 0.19302-0.12877 0.29887-0.18078l1.8521-0.91083 1.0888-1.8218c0.84958-1.4225 2.6914-1.8869 4.1139-1.0373z"
+                  id="a"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                />
+                <path
+                  d="m18.031 2.5606c0.38358 0.24048 0.70776 0.56466 0.94824 0.94824l1.2612 2.0121 1.5104 0.63549c1.0182 0.42824 1.4964 1.6008 1.0682 2.619-0.31209 0.74201-1.0386 1.2246-1.8436 1.2246h-9.068c-1.1046 0-2-0.89543-2-2 0-0.77617 0.44907-1.4823 1.152-1.8113l1.636-0.76672 1.2003-1.9131c0.88009-1.4038 2.7315-1.8283 4.1353-0.94824z"
+                  stroke-width="2"
+                />
+                <circle
+                  cx="16.5"
+                  cy="6"
+                  fill="#D8D8D8"
+                  r="1"
+                />
+                <line
+                  id="Line"
+                  stroke-linecap="round"
+                  stroke-width="2"
+                  x1="11.5"
+                  x2="18"
+                  y1="14.5"
+                  y2="14.5"
+                />
+                <line
+                  id="b"
+                  stroke-linecap="round"
+                  stroke-width="2"
+                  x1="11.5"
+                  x2="20"
+                  y1="26"
+                  y2="26"
+                />
+                <line
+                  stroke-linecap="round"
+                  stroke-width="2"
+                  x1="11.5"
+                  x2="22"
+                  y1="20"
+                  y2="20"
+                />
+              </g>
+            </g>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
 
 exports[`Export Boad Tests render ExportBoard correctly 1`] = `
 Object {

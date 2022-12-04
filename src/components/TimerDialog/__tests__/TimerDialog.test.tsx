@@ -8,11 +8,11 @@ import i18nTest from "i18nTest";
 import {I18nextProvider} from "react-i18next";
 import {TimerDialog} from "..";
 
-const mockedUsedNavigate = jest.fn();
-const storeDispatchSpy = jest.spyOn(store, "dispatch");
+const mockedUsedNavigate = vi.fn();
+const storeDispatchSpy = vi.spyOn(store, "dispatch");
 
-jest.mock("react-router-dom", () => ({
-  ...jest.requireActual("react-router-dom"),
+vi.mock("react-router-dom", async () => ({
+  ...(await vi.importActual<any>("react-router-dom")),
   useNavigate: () => mockedUsedNavigate,
 }));
 

@@ -68,8 +68,8 @@ describe("ParticipantsList", () => {
   });
 
   test("Permission toggle calls store.dispatch", () => {
-    const useDispatchSpy = jest.spyOn(redux, "useDispatch");
-    const dispatchMock = jest.fn();
+    const useDispatchSpy = vi.spyOn(redux, "useDispatch");
+    const dispatchMock = vi.fn();
     useDispatchSpy.mockReturnValue(dispatchMock);
     const {container} = render(createParticipantsList(true), {
       container: global.document.querySelector("#portal")!,

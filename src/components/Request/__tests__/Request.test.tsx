@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import {fireEvent, getByText} from "@testing-library/react";
 import {Request} from "components/Request";
 import {Actions} from "store/action";
@@ -21,8 +22,8 @@ describe("JoinRequest", () => {
   };
 
   describe("should render correctly", () => {
-    const useDispatchSpy = jest.spyOn(redux, "useDispatch");
-    const mockDispatchFn = jest.fn();
+    const useDispatchSpy = vi.spyOn(redux, "useDispatch");
+    const mockDispatchFn = vi.fn();
     useDispatchSpy.mockReturnValue(mockDispatchFn);
 
     test("on single join request", () => {
@@ -37,12 +38,12 @@ describe("JoinRequest", () => {
   });
 
   describe("should call dispatch correctly", () => {
-    let mockDispatchFn: jest.Mock<any, any> | Dispatch<Action<any>>;
+    let mockDispatchFn: vi.Mock<any, any> | Dispatch<Action<any>>;
 
     beforeEach(() => {
-      jest.clearAllMocks();
-      const useDispatchSpy = jest.spyOn(redux, "useDispatch");
-      mockDispatchFn = jest.fn();
+      vi.clearAllMocks();
+      const useDispatchSpy = vi.spyOn(redux, "useDispatch");
+      mockDispatchFn = vi.fn();
       useDispatchSpy.mockReturnValue(mockDispatchFn);
     });
 

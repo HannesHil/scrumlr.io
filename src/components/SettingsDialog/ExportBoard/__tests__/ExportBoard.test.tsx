@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import {fireEvent, render, waitFor} from "@testing-library/react";
 import {Provider} from "react-redux";
 import {exportAsJSON, exportAsCSV} from "utils/export";
@@ -7,10 +8,10 @@ import i18nTest from "i18nTest";
 import getTestStore from "utils/test/getTestStore";
 import {BrowserRouter} from "react-router-dom";
 
-jest.mock("utils/export", () => ({
-  ...jest.requireActual("utils/export"),
-  exportAsJSON: jest.fn(),
-  exportAsCSV: jest.fn(),
+vi.mock("utils/export", async () => ({
+  ...(await vi.importActual<any>("utils/export")),
+  exportAsJSON: vi.fn(),
+  exportAsCSV: vi.fn(),
 }));
 
 const renderExportBoard = () => {

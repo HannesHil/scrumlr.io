@@ -1,9 +1,10 @@
+import { vi } from "vitest";
 import {render} from "testUtils";
 import {Timer} from "components/Timer";
 import {useAppSelector} from "store";
 
-jest.mock("store");
-const mockedUseAppSelector = jest.mocked(useAppSelector);
+vi.mock("store");
+const mockedUseAppSelector = vi.mocked(useAppSelector);
 
 describe("Timer", () => {
   test("should render correctly", () => {

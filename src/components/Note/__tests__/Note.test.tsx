@@ -41,11 +41,11 @@ const createNote = (isModerator: boolean, overwrite?: Partial<ApplicationState>)
 
 describe("Note", () => {
   beforeEach(() => {
-    window.IntersectionObserver = jest.fn(
+    window.IntersectionObserver = vi.fn(
       () =>
         ({
-          observe: jest.fn(),
-          disconnect: jest.fn(),
+          observe: vi.fn(),
+          disconnect: vi.fn(),
         } as unknown as IntersectionObserver)
     );
   });
@@ -86,8 +86,8 @@ describe("Note", () => {
 
   describe("side effects", () => {
     it("should share note during active moderation on click", () => {
-      const dispatchSpy = jest.fn();
-      jest.spyOn(reactRedux, "useDispatch").mockImplementationOnce(() => dispatchSpy);
+      const dispatchSpy = vi.fn();
+      vi.spyOn(reactRedux, "useDispatch").mockImplementationOnce(() => dispatchSpy);
       const view: ViewState = {
         moderating: true,
         serverTimeOffset: 0,
@@ -100,8 +100,8 @@ describe("Note", () => {
       expect(dispatchSpy).toHaveBeenCalledWith(Actions.shareNote(NOTE_ID));
     });
     it("should navigate to stack route on click", () => {
-      const navigateSpy = jest.fn();
-      jest.spyOn(reactRouter, "useNavigate").mockImplementationOnce(() => navigateSpy);
+      const navigateSpy = vi.fn();
+      vi.spyOn(reactRouter, "useNavigate").mockImplementationOnce(() => navigateSpy);
       const {container} = render(createNote(false));
       fireEvent.click(container.querySelector(".note")!);
       expect(navigateSpy).toHaveBeenCalledWith(`note/${NOTE_ID}/stack`);

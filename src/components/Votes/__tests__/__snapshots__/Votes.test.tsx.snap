@@ -1,4 +1,101 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
+
+exports[`Votes > should render correctly > with no votes and active voting 1`] = `
+<div>
+  <div
+    class="votes"
+    role="none"
+  >
+    <button
+      class="dot-button vote-button-add"
+    >
+      <svg
+        class="vote-button-add__icon"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+        <path
+          d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+          fill="currentColor"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Votes > should render correctly > with no votes and disabled voting 1`] = `
+<div>
+  <div
+    class="votes"
+    role="none"
+  />
+</div>
+`;
+
+exports[`Votes > should render correctly > with votes and active voting 1`] = `
+<div>
+  <div
+    class="votes"
+    role="none"
+  >
+    <button
+      class="dot-button vote-button-remove"
+    >
+      <span
+        class="vote-button-remove__folded-corner"
+      />
+      <span>
+        1
+      </span>
+    </button>
+    <button
+      class="dot-button vote-button-add"
+      disabled=""
+    >
+      <svg
+        class="vote-button-add__icon"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+        <path
+          d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+          fill="currentColor"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Votes > should render correctly > with votes and disabled voting 1`] = `
+<div>
+  <div
+    class="votes"
+    role="none"
+  >
+    <button
+      class="dot-button vote-button-remove"
+      disabled=""
+    >
+      <span
+        class="vote-button-remove__folded-corner"
+      />
+      <span>
+        1
+      </span>
+    </button>
+  </div>
+</div>
+`;
 
 exports[`Votes should render correctly with no votes and active voting 1`] = `
 <div>

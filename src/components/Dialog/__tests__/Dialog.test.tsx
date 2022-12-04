@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import {fireEvent, render} from "@testing-library/react";
 import {Dialog} from "..";
 
@@ -29,7 +30,7 @@ describe("Dialog", () => {
   });
 
   it("should run the onClose function on ESC key press", () => {
-    const mockOnClose = jest.fn();
+    const mockOnClose = vi.fn();
     const {container} = render(<Dialog title="Test-Dialog" onClose={mockOnClose} />, {container: global.document.querySelector("#portal")!});
     fireEvent.keyDown(container, {key: "Escape", code: "Escape", charCode: 27});
     expect(mockOnClose).toHaveBeenCalled();

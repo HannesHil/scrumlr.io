@@ -1,4 +1,38 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
+
+exports[`Note Input > should render correctly 1`] = `
+<form
+  class="note-input"
+>
+  <input
+    class="note-input__input"
+    maxlength="1024"
+    placeholder="Add your note..."
+    type="text"
+    value=""
+  />
+  <button
+    class="note-input__add-button"
+    tabindex="-1"
+    type="submit"
+  >
+    <svg
+      class="note-input__icon"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+      <path
+        d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+        fill="currentColor"
+      />
+    </svg>
+  </button>
+</form>
+`;
 
 exports[`Note Input should render correctly 1`] = `
 <form

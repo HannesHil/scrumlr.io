@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import {fireEvent} from "@testing-library/react";
 import {DotButton} from "components/DotButton";
 import {render} from "testUtils";
@@ -22,7 +23,7 @@ describe("DotButton", () => {
   });
 
   test("should call 'onClick' if given", () => {
-    const mockOnClick = jest.fn();
+    const mockOnClick = vi.fn();
     const dotButton = render(<DotButton onClick={mockOnClick} />);
     fireEvent.click(dotButton.container.getElementsByTagName("button")[0]);
     expect(mockOnClick).toHaveBeenCalled();

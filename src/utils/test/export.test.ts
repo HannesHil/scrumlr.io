@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import {API} from "api";
 import {BoardDataType} from "components/SettingsDialog/ExportBoard/types";
 import {getMarkdownExport} from "../export";
@@ -17,7 +18,7 @@ describe("the board export functions", () => {
       // @ts-ignore
       window.location = new URL(`https://scrumlr.io/board/${boardData.board.id}/settings/export`);
 
-      API.exportBoard = jest.fn((): Promise<Response> => Promise.resolve(new Response(JSON.stringify(boardData))));
+      API.exportBoard = vi.fn((): Promise<Response> => Promise.resolve(new Response(JSON.stringify(boardData))));
 
       const mdExport = await getMarkdownExport(boardData.board.id);
 

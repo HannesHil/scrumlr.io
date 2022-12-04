@@ -5,9 +5,10 @@ import {render} from "testUtils";
 import {ApplicationState} from "../../types";
 import {Provider} from "react-redux";
 import getTestStore from "utils/test/getTestStore";
+import { vi } from "vitest";
 
-jest.mock("react-router-dom", () => ({
-  ...jest.requireActual("react-router-dom"),
+vi.mock("react-router-dom", async () => ({
+  ...(await vi.importActual<any>("react-router-dom")),
   Navigate: () => <div>Error</div>,
 }));
 

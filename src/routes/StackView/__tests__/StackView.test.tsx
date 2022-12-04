@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import {fireEvent, render} from "@testing-library/react";
 import {createMemoryHistory} from "history";
 import {Suspense} from "react";
@@ -36,7 +37,7 @@ describe("StackView", () => {
     const portal = global.document.createElement("div");
     portal.setAttribute("id", "portal");
     global.document.querySelector("body")!.appendChild(portal);
-    jest.spyOn(reactRouter, "useParams").mockReturnValue({boardId: BOARD_ID, noteId: NOTE_ID});
+    vi.spyOn(reactRouter, "useParams").mockReturnValue({boardId: BOARD_ID, noteId: NOTE_ID});
   });
 
   describe("display", () => {
@@ -53,8 +54,8 @@ describe("StackView", () => {
 
   describe("side effects", () => {
     it("should unshare note during active moderation on close", () => {
-      const dispatchSpy = jest.fn();
-      jest.spyOn(reactRedux, "useDispatch").mockImplementationOnce(() => dispatchSpy);
+      const dispatchSpy = vi.fn();
+      vi.spyOn(reactRedux, "useDispatch").mockImplementationOnce(() => dispatchSpy);
       const view: ViewState = {
         moderating: true,
         serverTimeOffset: 0,
@@ -78,8 +79,8 @@ describe("StackView", () => {
     });
 
     it("should navigate to board route on close", () => {
-      const navigateSpy = jest.fn();
-      jest.spyOn(reactRouter, "useNavigate").mockImplementationOnce(() => navigateSpy);
+      const navigateSpy = vi.fn();
+      vi.spyOn(reactRouter, "useNavigate").mockImplementationOnce(() => navigateSpy);
       const {container} = render(createStackView(), {container: global.document.querySelector("#portal")!});
       expect(container.querySelector(".stack-view__portal")).not.toBeNull();
       fireEvent.click(container.querySelector(".stack-view__portal")!);

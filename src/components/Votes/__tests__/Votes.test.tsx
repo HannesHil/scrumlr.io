@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import {fireEvent} from "@testing-library/react";
 import {Actions} from "store/action";
 import {Provider} from "react-redux";
@@ -5,7 +6,6 @@ import {Votes} from "components/Votes";
 import {render} from "testUtils";
 import getTestStore from "utils/test/getTestStore";
 import * as redux from "react-redux";
-import {Dispatch, Action} from "redux";
 import {ApplicationState} from "types";
 import getTestVoting from "utils/test/getTestVoting";
 
@@ -63,10 +63,10 @@ describe("Votes", () => {
   });
 
   describe("should dispatch to store on button press", () => {
-    let mockDispatchFn: jest.Mock<any, any> | Dispatch<Action<any>>;
+    let mockDispatchFn: any;
     beforeEach(() => {
-      const useDispatchSpy = jest.spyOn(redux, "useDispatch");
-      mockDispatchFn = jest.fn();
+      const useDispatchSpy = vi.spyOn(redux, "useDispatch");
+      mockDispatchFn = vi.fn();
       useDispatchSpy.mockReturnValue(mockDispatchFn);
     });
     test("addVote", () => {

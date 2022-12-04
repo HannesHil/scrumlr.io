@@ -22,11 +22,11 @@ const createBoardWithColumns = (...colors: Color[]) => {
 
 describe("basic", () => {
   beforeEach(() => {
-    window.IntersectionObserver = jest.fn(
+    window.IntersectionObserver = vi.fn(
       () =>
         ({
-          observe: jest.fn(),
-          disconnect: jest.fn(),
+          observe: vi.fn(),
+          disconnect: vi.fn(),
         } as unknown as IntersectionObserver)
     );
   });
@@ -95,11 +95,11 @@ describe("basic", () => {
 
 describe("navigation", () => {
   beforeEach(() => {
-    window.IntersectionObserver = jest.fn(
+    window.IntersectionObserver = vi.fn(
       () =>
         ({
-          observe: jest.fn(),
-          disconnect: jest.fn(),
+          observe: vi.fn(),
+          disconnect: vi.fn(),
         } as unknown as IntersectionObserver)
     );
 
@@ -112,10 +112,10 @@ describe("navigation", () => {
 
   beforeEach(() => {
     intersectionObserver = {
-      observe: jest.fn(),
-      disconnect: jest.fn(),
+      observe: vi.fn(),
+      disconnect: vi.fn(),
     } as unknown as IntersectionObserver;
-    window.IntersectionObserver = jest.fn(() => intersectionObserver);
+    window.IntersectionObserver = vi.fn(() => intersectionObserver);
   });
 
   test("intersection observer is registered on mount", () => {
@@ -166,7 +166,7 @@ describe("navigation", () => {
 
     test("correct scroll of previous button", () => {
       const columns = showColumns(false, true, false);
-      const scrollIntoView = jest.fn();
+      const scrollIntoView = vi.fn();
       columns[0].scrollIntoView = scrollIntoView;
       fireEvent.click(container.querySelectorAll(".menu-bars__navigation")[0] as HTMLElement);
 
@@ -176,7 +176,7 @@ describe("navigation", () => {
     test("correct scroll of next button", () => {
       const columns = showColumns(false, true, false);
 
-      const scrollIntoView = jest.fn();
+      const scrollIntoView = vi.fn();
       columns[2].scrollIntoView = scrollIntoView;
       fireEvent.click(container.querySelectorAll(".menu-bars__navigation")[1] as HTMLElement);
 

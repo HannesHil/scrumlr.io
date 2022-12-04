@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import {fireEvent, render, screen} from "@testing-library/react";
 import {Provider} from "react-redux";
 import {Actions} from "store/action";
@@ -10,14 +11,14 @@ import {I18nextProvider} from "react-i18next";
 import {VotingDialog} from "..";
 import i18nTest from "i18nTest";
 
-const mockedUsedNavigate = jest.fn();
+const mockedUsedNavigate = vi.fn();
 
-jest.mock("react-router-dom", () => ({
-  ...jest.requireActual("react-router-dom"),
+vi.mock("react-router-dom", () => ({
+  ...vi.importActual<any>("react-router-dom"),
   useNavigate: () => mockedUsedNavigate,
 }));
 
-const storeDispatchSpy = jest.spyOn(store, "dispatch");
+const storeDispatchSpy = vi.spyOn(store, "dispatch");
 
 describe("VotingDialog", () => {
   const createVotingDialog = (overwrite?: Partial<ApplicationState>) => {
@@ -51,13 +52,13 @@ describe("VotingDialog", () => {
     expect(mockedUsedNavigate).toHaveBeenCalledWith("..");
   });
 
-  xit("should dispatch to store correctly on start voting button click", () => {
+  it("should dispatch to store correctly on start voting button click", () => {
     render(createVotingDialog({votings: {open: undefined, past: []}}), {container: global.document.querySelector("#portal")!});
     fireEvent.click(screen.getByTestId("voting-dialog__start-button"));
     expect(storeDispatchSpy).toHaveBeenCalledWith(Actions.createVoting({voteLimit: 5, showVotesOfOthers: true, allowMultipleVotes: false}));
   });
 
-  xit("should dispatch to store correctly on start voting button click with custom vote configuration", () => {
+  it("should dispatch to store correctly on start voting button click with custom vote configuration", () => {
     render(createVotingDialog({votings: {open: undefined, past: []}}), {container: global.document.querySelector("#portal")!});
     fireEvent.click(screen.getByTestId("voting-dialog__cumulative-voting-button"));
     fireEvent.click(screen.getByTestId("voting-dialog__anonymous-voting-button"));

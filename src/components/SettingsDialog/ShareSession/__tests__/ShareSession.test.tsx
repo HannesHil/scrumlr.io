@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import {fireEvent, waitFor} from "@testing-library/dom";
 import {render} from "@testing-library/react";
 import {ShareSession} from "../ShareSession";
@@ -29,7 +30,7 @@ describe("ShareQrCode Tests", () => {
 
   test("Click on copy share link", async () => {
     const shareDialog = renderSettingsDialog();
-    jest.spyOn(navigator.clipboard, "writeText");
+    vi.spyOn(navigator.clipboard, "writeText");
 
     const button = shareDialog.getByRole("button");
     fireEvent.click(button);

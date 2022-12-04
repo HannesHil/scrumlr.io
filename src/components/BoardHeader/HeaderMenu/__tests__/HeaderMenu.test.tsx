@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import {fireEvent, waitFor} from "@testing-library/react";
 import {wrapWithTestBackend} from "react-dnd-test-utils";
 import {Provider} from "react-redux";
@@ -7,7 +8,6 @@ import {HeaderMenu} from "components/BoardHeader/HeaderMenu";
 import {render} from "testUtils";
 import getTestStore from "utils/test/getTestStore";
 import * as redux from "react-redux";
-import {Dispatch, Action} from "redux";
 
 Object.assign(navigator, {
   clipboard: {
@@ -15,19 +15,19 @@ Object.assign(navigator, {
   },
 });
 
-jest.mock("store", () => ({
-  ...jest.requireActual("store"),
-  dispatch: jest.fn(),
+vi.mock("store", async () => ({
+  ...(await vi.importActual<any>("store")),
+  dispatch: vi.fn(),
 }));
 
-jest.mock("utils/export", () => ({
-  ...jest.requireActual("utils/export"),
-  exportAsJSON: jest.fn(),
-  exportAsCSV: jest.fn(),
-  exportAsCSVZip: jest.fn(),
+vi.mock("utils/export", async () => ({
+  ...(await vi.importActual<any>("utils/export")),
+  exportAsJSON: vi.fn(),
+  exportAsCSV: vi.fn(),
+  exportAsCSVZip: vi.fn(),
 }));
 
-jest.mock("file-saver", () => ({saveAs: jest.fn()}));
+vi.mock("file-saver", () => ({saveAs: vi.fn()}));
 
 const createHeaderMenu = (currentUserIsModerator: boolean) => {
   const [HeaderMenuContext] = wrapWithTestBackend(HeaderMenu);
@@ -39,14 +39,14 @@ const createHeaderMenu = (currentUserIsModerator: boolean) => {
 };
 
 describe("<HeaderMenu/>", () => {
-  let mockDispatchFn: jest.Mock<any, any> | Dispatch<Action<any>>;
+  let mockDispatchFn: any;
 
   beforeEach(() => {
     const portal = global.document.createElement("div");
     portal.setAttribute("id", "portal");
     global.document.querySelector("body")!.appendChild(portal);
-    const useDispatchSpy = jest.spyOn(redux, "useDispatch");
-    mockDispatchFn = jest.fn();
+    const useDispatchSpy = vi.spyOn(redux, "useDispatch");
+    mockDispatchFn = vi.fn();
     useDispatchSpy.mockReturnValue(mockDispatchFn);
   });
 

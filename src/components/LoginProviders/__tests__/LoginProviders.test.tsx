@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import {fireEvent} from "@testing-library/react";
 import {Auth} from "utils/auth";
 import {LoginProviders} from "components/LoginProviders";
@@ -50,7 +51,7 @@ describe("check for all provider buttons", () => {
   });
 
   describe("click-handler", () => {
-    const signInSpy = jest.spyOn(Auth, "signInWithAuthProvider");
+    const signInSpy = vi.spyOn(Auth, "signInWithAuthProvider");
 
     test("google sign in", () => {
       const {container} = render(createLoginProviders(["GOOGLE"]));

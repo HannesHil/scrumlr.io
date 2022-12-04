@@ -1,3 +1,4 @@
+import { vi } from "vitest"
 import {fireEvent, render} from "@testing-library/react";
 import {NoteInput} from "components/NoteInput";
 import {Actions} from "store/action";
@@ -17,11 +18,11 @@ const createNoteInput = (columnId: string, maxNoteLength: number) => (
 
 describe("Note Input", () => {
   beforeEach(() => {
-    window.IntersectionObserver = jest.fn(
+    window.IntersectionObserver = vi.fn(
       () =>
         ({
-          observe: jest.fn(),
-          disconnect: jest.fn(),
+          observe: vi.fn(),
+          disconnect: vi.fn(),
         } as unknown as IntersectionObserver)
     );
   });
@@ -32,8 +33,8 @@ describe("Note Input", () => {
   });
 
   test("note length", () => {
-    const useDispatchSpy = jest.spyOn(redux, "useDispatch");
-    const dispatchMock = jest.fn();
+    const useDispatchSpy = vi.spyOn(redux, "useDispatch");
+    const dispatchMock = vi.fn();
     useDispatchSpy.mockReturnValue(dispatchMock);
     const {container} = render(createNoteInput("TestID", 5));
 
