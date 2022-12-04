@@ -12,7 +12,7 @@ i18n
   .use(initReactI18next)
   .init({
     backend: {
-      queryStringParams: {v: process.env.REACT_APP_LOCALES_HASH ?? "0000000000"},
+      queryStringParams: {v: import.meta.env.VITE_LOCALES_HASH ?? "0000000000"},
     },
     detection: {
       lookupLocalStorage: `${LOCALE_STORAGE_KEY}`,

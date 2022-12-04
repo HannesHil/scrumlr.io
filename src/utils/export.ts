@@ -97,7 +97,7 @@ const mdColumns = (boardData: BoardDataType) => {
 
 const mdBranding = () =>
   `> ${t("PrintView.GeneratedOn")} [scrumlr.io](${DEFAULT_URL})  \n${t("PrintView.ProvidedBy")} [inovex](https://www.inovex.de)  \n\n![Scrumlr Logo](${
-    process.env.REACT_APP_PUBLIC_URL || DEFAULT_URL
+    import.meta.env.VITE_PUBLIC_URL || DEFAULT_URL
   }/scrumlr-logo-light.svg)`;
 
 const mdTemplate = (boardData: BoardDataType) =>
