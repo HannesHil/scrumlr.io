@@ -1,5 +1,5 @@
-@import "constants/style";
-@import "components/Note/Note.scss";
+@import "src/constants/style";
+@import "src/components/Note/Note";
 
 .note-dialog__note-content {
   display: flex;

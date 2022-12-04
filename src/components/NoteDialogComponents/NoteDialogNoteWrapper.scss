@@ -1,6 +1,6 @@
-@import "constants/style";
-@import "components/Note/Note.scss";
-@import "routes/StackView/StackView.scss";
+@import "src/constants/style";
+@import "src/components/Note/Note.scss";
+@import "src/routes/StackView/StackView.scss";
 
 .note-dialog__scrollbar {
   height: calc(100vh - #{$stack-view__header-height} - #{$stack-view__navigation-height} - #{$stack-view__parent-note-height});
