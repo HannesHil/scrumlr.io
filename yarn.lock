@@ -914,7 +914,7 @@
     semver "^7.3.7"
     tsutils "^3.21.0"
 
-"@typescript-eslint/utils@5.45.0":
+"@typescript-eslint/utils@5.45.0", "@typescript-eslint/utils@^5.42.1":
   version "5.45.0"
   resolved "https://registry.npmjs.org/@typescript-eslint/utils/-/utils-5.45.0.tgz"
   dependencies:
@@ -1836,6 +1836,11 @@ eslint-config-prettier@^8.5.0:
   version "8.5.0"
   resolved "https://registry.npmjs.org/eslint-config-prettier/-/eslint-config-prettier-8.5.0.tgz"
 
+eslint-config-sets@^1.8.3:
+  version "1.8.3"
+  resolved "https://registry.yarnpkg.com/eslint-config-sets/-/eslint-config-sets-1.8.3.tgz#f26c602bd1abae6fc1fbf17f2226867fcda49874"
+  integrity sha512-X9OtGgO3olmrUB42aWMIm9rO+ehz89dysyfWBITHq8N9hB/AxHuNkqHVNU3YLT53WpbRopVCEHIBhZ2i1dMFyw==
+
 eslint-import-resolver-node@^0.3.6:
   version "0.3.6"
   resolved "https://registry.npmjs.org/eslint-import-resolver-node/-/eslint-import-resolver-node-0.3.6.tgz"
@@ -1944,6 +1949,20 @@ eslint-plugin-react@7.31.11:
     resolve "^2.0.0-next.3"
     semver "^6.3.0"
     string.prototype.matchall "^4.0.8"
+
+eslint-plugin-vitest-globals@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-vitest-globals/-/eslint-plugin-vitest-globals-1.2.0.tgz#b16dae2fc284e36f09cd3ebbf54f9c0741576e9b"
+  integrity sha512-vINsci+UOvObny6vutsa0c9xzM0PfdKgtkhnH8lLSe4+gZPjhK9O4v26oSu5Svb1n8Rvug4iX2k6keuKBoRlOg==
+  dependencies:
+    eslint-config-sets "^1.8.3"
+
+eslint-plugin-vitest@^0.0.20:
+  version "0.0.20"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-vitest/-/eslint-plugin-vitest-0.0.20.tgz#875f1bb086e66bdd12b7c60f59ddd1dfa28252d7"
+  integrity sha512-c4Rap+L5L9jkjwo9EubiLaJn0gp1bDQD7kyVR8IU6gUONtBba/hC/zlpd85svWKPuU4Ko6OOk/4AUtYfaGCHzA==
+  dependencies:
+    "@typescript-eslint/utils" "^5.42.1"
 
 eslint-scope@^5.1.1:
   version "5.1.1"
