@@ -1,3 +1,4 @@
+import {beforeEach} from "vitest";
 import {fireEvent} from "@testing-library/react";
 import {Note} from "components/Note";
 import {wrapWithTestBackend} from "react-dnd-test-utils";

@@ -1,3 +1,4 @@
+import {beforeEach} from "vitest";
 import {fireEvent} from "@testing-library/react";
 import {render} from "testUtils";
 import {Provider} from "react-redux";

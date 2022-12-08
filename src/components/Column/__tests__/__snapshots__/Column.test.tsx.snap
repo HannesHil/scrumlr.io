@@ -2,7 +2,7 @@
 
 exports[`Column > should have correct style > show column with correct style 1`] = `
 <section
-  class="column accent-color__planning-pink"
+  class="column column--hidden accent-color__planning-pink"
 >
   <div
     class="column__content"
@@ -15,7 +15,7 @@ exports[`Column > should have correct style > show column with correct style 1`]
       >
         <input
           class="note-input__input"
-          data-tip="CMD/CTRL + 1"
+          data-tip="OPTION/ALT + 1"
           maxlength="1024"
           placeholder="Add your note..."
           type="text"
@@ -108,85 +108,6 @@ exports[`Column > should have correct style > show column with correct style 1`]
               stroke-linejoin="round"
               stroke-width="2"
             />
-          </svg>
-        </button>
-      </div>
-    </div>
-    <div
-      class="column__notes-wrapper"
-    >
-      <ul
-        class="column__note-list"
-      />
-    </div>
-  </div>
-</section>
-`;
-
-exports[`Column should have correct style show column with correct style 1`] = `
-<section
-  class="column column--hidden accent-color__planning-pink"
->
-  <div
-    class="column__content"
-  >
-    <div
-      class="column__header"
-    >
-      <form
-        class="note-input"
-      >
-        <input
-          class="note-input__input"
-          data-tip="OPTION/ALT + 1"
-          maxlength="1024"
-          placeholder="Add your note..."
-          type="text"
-          value=""
-        />
-        <button
-          class="note-input__add-button"
-          tabindex="-1"
-          type="submit"
-        >
-          <svg
-            class="note-input__icon"
-          >
-            icon-add.svg
-          </svg>
-        </button>
-      </form>
-      <div
-        class="column__header-title"
-      >
-        <div
-          class="column__header-text-wrapper column__header-text-wrapper--hidden"
-        >
-          <svg
-            class="column__header-hidden-icon"
-            title="Column is hidden for all participants"
-          >
-            icon-hidden.svg
-          </svg>
-          <h2
-            class="column__header-text column__header-text--hidden"
-          >
-            Testheader
-          </h2>
-        </div>
-        <span
-          class="column__header-card-number"
-        >
-          0
-        </span>
-        <button
-          class="column__header-edit-button"
-          title="Settings"
-        >
-          <svg
-            class="column__header-edit-button-icon"
-          >
-            icon-dots.svg
           </svg>
         </button>
       </div>

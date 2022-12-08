@@ -1,3 +1,4 @@
+import {beforeEach} from "vitest";
 import {act, fireEvent} from "@testing-library/react";
 import {wrapWithTestBackend} from "react-dnd-test-utils";
 import {Column} from "components/Column";

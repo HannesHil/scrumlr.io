@@ -1,4 +1,4 @@
-import { vi } from "vitest";
+import {vi, beforeEach} from "vitest";
 import {fireEvent, render} from "@testing-library/react";
 import {createMemoryHistory} from "history";
 import {Suspense} from "react";
@@ -33,11 +33,11 @@ const createStackView = (overwrite?: Partial<ApplicationState>) => {
 };
 
 describe("StackView", () => {
-  beforeEach(() => {
+  beforeEach(async () => {
     const portal = global.document.createElement("div");
     portal.setAttribute("id", "portal");
     global.document.querySelector("body")!.appendChild(portal);
-    vi.spyOn(reactRouter, "useParams").mockReturnValue({boardId: BOARD_ID, noteId: NOTE_ID});
+    //vi.spyOn(reactRouter, "useParams").mockReturnValue({boardId: BOARD_ID, noteId: NOTE_ID});
   });
 
   describe("display", () => {

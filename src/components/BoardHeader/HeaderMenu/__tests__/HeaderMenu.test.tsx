@@ -1,4 +1,4 @@
-import { vi } from "vitest";
+import {vi, beforeEach} from "vitest";
 import {fireEvent, waitFor} from "@testing-library/react";
 import {wrapWithTestBackend} from "react-dnd-test-utils";
 import {Provider} from "react-redux";

@@ -33,28 +33,3 @@ exports[`Note Input > should render correctly 1`] = `
   </button>
 </form>
 `;
-
-exports[`Note Input should render correctly 1`] = `
-<form
-  class="note-input"
->
-  <input
-    class="note-input__input"
-    maxlength="1024"
-    placeholder="Add your note..."
-    type="text"
-    value=""
-  />
-  <button
-    class="note-input__add-button"
-    tabindex="-1"
-    type="submit"
-  >
-    <svg
-      class="note-input__icon"
-    >
-      icon-add.svg
-    </svg>
-  </button>
-</form>
-`;

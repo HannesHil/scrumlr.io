@@ -47,23 +47,3 @@ exports[`Timer > should render correctly 1`] = `
   </button>
 </div>
 `;
-
-exports[`Timer should render correctly 1`] = `
-<div
-  class="timer"
-  id="timer"
->
-  <span>
-    02
-    :
-    59
-  </span>
-  <button
-    title="Stop timer"
-  >
-    <svg>
-      icon-close.svg
-    </svg>
-  </button>
-</div>
-`;

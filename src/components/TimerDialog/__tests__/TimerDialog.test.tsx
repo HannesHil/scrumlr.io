@@ -1,3 +1,4 @@
+import {beforeEach} from "vitest";
 import {fireEvent, render, screen} from "@testing-library/react";
 import {Provider} from "react-redux";
 import store from "store";
@@ -31,7 +32,7 @@ describe("TimerDialog", () => {
     global.document.querySelector("body")?.appendChild(portal);
   });
 
-  it("should match the snapshot", () => {
+  it("should match the napshot", () => {
     const {container} = render(createTimerDialog(), {container: global.document.querySelector("#portal")!});
     expect(container.firstChild).toMatchSnapshot();
   });

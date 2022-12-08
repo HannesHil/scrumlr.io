@@ -1,4 +1,4 @@
-import { vi } from "vitest";
+import {vi, beforeEach} from "vitest";
 import {fireEvent} from "@testing-library/react";
 import {Actions} from "store/action";
 import {Provider} from "react-redux";

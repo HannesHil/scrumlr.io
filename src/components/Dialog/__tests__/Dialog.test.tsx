@@ -1,4 +1,4 @@
-import { vi } from "vitest";
+import {vi, beforeEach} from "vitest";
 import {fireEvent, render} from "@testing-library/react";
 import {Dialog} from "..";
 

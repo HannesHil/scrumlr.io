@@ -1,3 +1,4 @@
+import {beforeEach} from "vitest";
 import {fireEvent} from "@testing-library/react";
 import {ParticipantsList} from "components/BoardHeader/ParticipantsList";
 import {Actions} from "store/action";

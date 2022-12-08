@@ -1,3 +1,4 @@
+import {beforeEach} from "vitest";
 import {Provider} from "react-redux";
 import {render} from "testUtils";
 import getTestStore from "utils/test/getTestStore";
