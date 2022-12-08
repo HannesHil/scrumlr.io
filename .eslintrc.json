@@ -2,9 +2,9 @@
   "env": {
     "browser": true,
     "es2020": true,
-    "vitest-globals/env": true
+    "jest": true
   },
-  "extends": ["airbnb", "airbnb-typescript", "airbnb/hooks", "plugin:@typescript-eslint/recommended", "plugin:vitest-globals/recommended", "prettier", "plugin:import/errors", "plugin:import/warnings", "plugin:import/typescript"],
+  "extends": ["plugin:jest/recommended", "airbnb", "airbnb-typescript", "airbnb/hooks", "plugin:@typescript-eslint/recommended", "plugin:vitest-globals/recommended", "prettier", "plugin:import/errors", "plugin:import/warnings", "plugin:import/typescript"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -14,7 +14,7 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": ["only-warn", "react", "react-hooks", "@typescript-eslint", "vitest", "import"],
+  "plugins": ["only-warn", "react", "react-hooks", "@typescript-eslint", "jest", "import"],
   "rules": {
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": ["error"],

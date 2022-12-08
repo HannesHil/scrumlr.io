@@ -69,6 +69,7 @@ describe("ParticipantsList", () => {
   });
 
   test("Permission toggle calls store.dispatch", () => {
+    vi.mock("redux");
     const useDispatchSpy = vi.spyOn(redux, "useDispatch");
     const dispatchMock = vi.fn();
     useDispatchSpy.mockReturnValue(dispatchMock);

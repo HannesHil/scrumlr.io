@@ -1,17 +1,18 @@
 import {beforeEach} from "vitest";
 import {fireEvent, render, screen} from "@testing-library/react";
 import {Provider} from "react-redux";
-import store from "store";
 import {Actions} from "store/action";
 import getTestStore from "utils/test/getTestStore";
 import getTestParticipant from "utils/test/getTestParticipant";
 import i18nTest from "i18nTest";
 import {I18nextProvider} from "react-i18next";
 import {TimerDialog} from "..";
+import store from "store";
 
-const mockedUsedNavigate = vi.fn();
+vi.mock("store");
 const storeDispatchSpy = vi.spyOn(store, "dispatch");
 
+const mockedUsedNavigate = vi.fn();
 vi.mock("react-router-dom", async () => ({
   ...(await vi.importActual<any>("react-router-dom")),
   useNavigate: () => mockedUsedNavigate,
@@ -42,7 +43,7 @@ describe("TimerDialog", () => {
     expect(mockedUsedNavigate).toHaveBeenCalledWith("..");
   });
 
-  it("should dispatch to store correctly on one minute button click", () => {
+  it("should dispatch to store correctly on one minute button click", async () => {
     render(createTimerDialog(), {container: global.document.querySelector("#portal")!});
     fireEvent.click(screen.getByTestId("timer-dialog__1-minute-button"));
     expect(storeDispatchSpy).toHaveBeenCalledWith(Actions.setTimer(1));

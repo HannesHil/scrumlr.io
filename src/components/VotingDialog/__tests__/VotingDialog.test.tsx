@@ -11,14 +11,14 @@ import {I18nextProvider} from "react-i18next";
 import {VotingDialog} from "..";
 import i18nTest from "i18nTest";
 
-const mockedUsedNavigate = vi.fn();
+const storeDispatchSpy = vi.spyOn(store, "dispatch");
+vi.mock("store");
 
+const mockedUsedNavigate = vi.fn();
 vi.mock("react-router-dom", () => ({
   ...vi.importActual<any>("react-router-dom"),
   useNavigate: () => mockedUsedNavigate,
 }));
-
-const storeDispatchSpy = vi.spyOn(store, "dispatch");
 
 describe("VotingDialog", () => {
   const createVotingDialog = (overwrite?: Partial<ApplicationState>) => {
