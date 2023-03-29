@@ -9,6 +9,7 @@ import {UserAvatar} from "components/BoardUsers";
 import {ReactComponent as WifiIconDisabled} from "assets/icon-wifi-disabled.svg";
 import {ReactComponent as MagnifyingGlassIcon} from "assets/icon-magnifying-glass.svg";
 import {ReactComponent as ReadyCheckIcon} from "assets/icon-check.svg";
+import {Footer} from "../Components/Footer";
 import "./Participants.scss";
 
 export const Participants = () => {
@@ -116,7 +117,7 @@ export const Participants = () => {
           ))}
       </ul>
       {isModerator && (
-        <footer className={classNames("participants-reset-state-banner__container", {"participants-reset-state-banner__container--is-active": existsAtLeastOneReadyUser})}>
+        <Footer className={classNames("participants-reset-state-banner__container", {"participants-reset-state-banner__container--is-active": existsAtLeastOneReadyUser})}>
           <div className="participants-reset-state-banner__icon-and-text">
             <ReadyCheckIcon className="participants-reset-state-banner__check-icon" />
             <div className="participants-reset-state-banner__text">{t("Participants.ResetBannerText")}</div>
@@ -124,7 +125,7 @@ export const Participants = () => {
           <button className="participants-reset-state-banner__button" onClick={resetReadyStateOfAllUsers}>
             {t("Participants.ResetBannerButton")}
           </button>
-        </footer>
+        </Footer>
       )}
     </section>
   );
