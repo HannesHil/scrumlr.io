@@ -1,0 +1,71 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "scrumlr-fullname" .Values.frontend }}
+  labels: 
+    {{- include "selectorLabels" .Values.frontend | nindent 6}}
+    {{- include "labels" . | nindent 6}}
+  annotations:
+    {{- if .Values.cert.enabled }}
+    cert-manager.io/cluster-issuer: {{if .Values.cert.prod}}"letsencrypt-prod"{{ else }}"letsencrypt-staging"{{ end }}
+    {{- end }}
+    external-dns.alpha.kubernetes.io/hostname: {{ .Values.hostname }}
+    traefik.ingress.kubernetes.io/router.tls.certresolver: myresolver
+spec:
+  ingressClassName: {{ .Values.frontend.ingress.ingressClassName }}
+  {{- if and .Values.cert.enabled  .Values.hostname }}
+  tls:
+  - hosts:
+    - {{ .Values.hostname }}
+    secretName:  {{ .Values.cert.name }}
+ {{- end }}
+  rules:
+  - http:
+      paths:
+      - path: / 
+        pathType: Prefix
+        backend:
+          service:
+            name: {{ include "scrumlr-fullname" .Values.frontend }}
+            port:
+              number: 8080
+      - path: /new
+        pathType: Prefix
+        backend:
+          service:
+            name: {{ include "scrumlr-fullname" .Values.frontend }}
+            port:
+              number: 8080
+      - path: /login 
+        pathType: Prefix
+        backend:
+          service:
+            name: {{ include "scrumlr-fullname" .Values.frontend }}
+            port:
+              number: 8080
+      - path: /board/
+        pathType: Prefix
+        backend:
+          service:
+            name: {{ include "scrumlr-fullname" .Values.frontend }}
+            port:
+              number: 8080
+      - path: /legal
+        pathType: Prefix
+        backend:
+          service:
+            name: {{ include "scrumlr-fullname" .Values.frontend }}
+            port:
+              number: 8080
+      {{- if .Values.oauthroute.enabled}}
+      - path: /auth/redirect
+        pathType: Prefix
+        backend:
+          service:
+            name: {{ include "scrumlr-fullname" .Values.frontend }}
+            port:
+              number: 8080
+      {{- end}}
+  {{- if .Values.hostname}}
+    host: {{ .Values.hostname }} 
+  {{- end}}

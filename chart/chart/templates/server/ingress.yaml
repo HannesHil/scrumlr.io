@@ -1,0 +1,49 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "scrumlr-fullname" .Values.server }}
+  labels:
+    {{- include "selectorLabels" .Values.server | nindent 6 }}
+    {{- include "labels" . | nindent 6 }}
+  annotations:
+    {{- if .Values.cert.enabled }}
+    cert-manager.io/cluster-issuer: {{if .Values.cert.prod}}"letsencrypt-prod"{{ else }}"letsencrypt-staging"{{ end }}
+    {{- end }}
+    external-dns.alpha.kubernetes.io/hostname: {{ .Values.hostname }}
+    traefik.ingress.kubernetes.io/router.tls.certresolver: myresolver
+    traefik.ingress.kubernetes.io/router.middlewares: traefik-strip-prefix@kubernetescrd
+    # traefik.ingress.kubernetes.io/router.entrypoints: websecure
+spec:
+  ingressClassName: {{ .Values.frontend.ingress.ingressClassName }}
+  {{- if and .Values.cert.enabled .Values.hostname}}
+  tls:
+  - hosts:
+    - {{ .Values.hostname }}
+    secretName:  {{ .Values.cert.name }}
+ {{- end }}
+  rules:
+  - http:
+      paths:
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: {{ include "scrumlr-fullname" .Values.server }}
+            port:
+              number: 8080
+  {{- if .Values.hostname }}
+    host: {{ .Values.hostname }}
+  {{- end}}
+---
+# Middleware
+# Strip prefix /overview
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: strip-prefix
+  namespace: traefik
+spec:
+  stripPrefix:
+    forceSlash: false
+    prefixes:
+      - /api
