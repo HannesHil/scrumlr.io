@@ -5,20 +5,12 @@ metadata:
   labels: 
     {{- include "selectorLabels" .Values.frontend | nindent 6}}
     {{- include "labels" . | nindent 6}}
+  {{- with .Values.frontend.ingress.annotations }}
   annotations:
-    {{- if .Values.cert.enabled }}
-    cert-manager.io/cluster-issuer: {{if .Values.cert.prod}}"letsencrypt-prod"{{ else }}"letsencrypt-staging"{{ end }}
-    {{- end }}
-    external-dns.alpha.kubernetes.io/hostname: {{ .Values.hostname }}
-    traefik.ingress.kubernetes.io/router.tls.certresolver: myresolver
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
 spec:
-  ingressClassName: {{ .Values.frontend.ingress.ingressClassName }}
-  {{- if and .Values.cert.enabled  .Values.hostname }}
-  tls:
-  - hosts:
-    - {{ .Values.hostname }}
-    secretName:  {{ .Values.cert.name }}
- {{- end }}
+  ingressClassName: {{ .Values.frontend.ingress.className }}
   rules:
   - http:
       paths:

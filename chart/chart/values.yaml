@@ -1,9 +1,3 @@
-# enable lets encrypt certs
-# use prod to change lets encrypt cluster issuer, false=lets-encrypt-staging , true=lets-encrypt-prod
-cert:
-  enabled: false
-  prod: false
-  name:
 hostname:
 
 oauthroute:
@@ -14,9 +8,9 @@ frontend:
   image: ghcr.io/inovex/scrumlr.io/scrumlr-frontend:3.2.1
   imagePullPolicy:
   ingress:
-    hostname:
-    ingressClassName:
-  replicas: 1
+    className:
+    annotations: {}
+  replicas: 2
 
 
 server:
@@ -24,9 +18,9 @@ server:
   image: ghcr.io/inovex/scrumlr.io/scrumlr-server:3.2.1
   imagePullPolicy:
   ingress:
-    hostname:
-    ingressClassName:
-  replicas: 1
+    className:
+    annotations: {}
+  replicas: 2
 
 nats:
   fullnameOverride: scrumlr-cache
