@@ -8,7 +8,7 @@ frontend:
   image: ghcr.io/inovex/scrumlr.io/scrumlr-frontend:3.2.1
   imagePullPolicy:
   ingress:
-    className:
+    className: nginx
     annotations: {}
   replicas: 2
 
@@ -18,7 +18,7 @@ server:
   image: ghcr.io/inovex/scrumlr.io/scrumlr-server:3.2.1
   imagePullPolicy:
   ingress:
-    className:
+    className: nginx
     annotations: {}
   replicas: 2
 
