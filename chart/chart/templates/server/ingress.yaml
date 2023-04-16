@@ -34,16 +34,3 @@ spec:
   {{- if .Values.hostname }}
     host: {{ .Values.hostname }}
   {{- end}}
----
-# Middleware
-# Strip prefix /overview
-apiVersion: traefik.containo.us/v1alpha1
-kind: Middleware
-metadata:
-  name: strip-prefix
-  namespace: traefik
-spec:
-  stripPrefix:
-    forceSlash: false
-    prefixes:
-      - /api
